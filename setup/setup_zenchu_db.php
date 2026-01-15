@@ -215,6 +215,7 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
             if( isset($league['dantai_league_team']) && count($league['dantai_league_team']) > 0 ){
                 $sqlval = [];
                 foreach($league['dantai_league_team'] as $team){
+                    print_r($team);
                     if( $team['team'] === null ){
                         $entry_id = 0;
                     } else {
