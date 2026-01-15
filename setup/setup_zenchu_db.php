@@ -8,7 +8,7 @@ INSERT INTO `kojin_tournament` (`series`, `year`, `series_mw`, `no`, `player_num
 (72, 2025, 'm', 1, 64, 64, 63, 0, 6, 8, '個人戦男子', '', 0, 0, 0, 0, 0, 0, NOW(), NOW(), 0);
 define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
 */
-    define( '__DATABASE_NAME__', 'keioffice_zenchu' );
+    define( '__DATABASE_NAME__', 'keioffice_kendo' );
 
     function insert_table_data( $dbs, $table_name, $data )
     {
