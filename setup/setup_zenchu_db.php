@@ -216,15 +216,16 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
                 $sqlval = [];
                 foreach($league['dantai_league_team'] as $team){
                     print_r($team);
-                    if( $team['team'] === null ){
-                        $entry_id = 0;
-                    } else {
+                    $entry_id = 0;
+                    if( $team['team'] |== null ){
                         $sql = 'SELECT * from `entry_info` where `series`=' . $team['series'] . ' and `year`=' . $year . ' and `disp_order`=' . $team['team'];
         	            $rs = $dbs->query( $sql );
                 	    if( $rs === false ){ exit; }
                         $row = $rs->fetch_assoc();
                         print_r($row);
-                        $entry_id = $row['id'];
+                        if( $row !== null ){
+                            $entry_id = $row['id'];
+                        }
                     }
                     $sqlval[] = '(' . $league_id . ',' . $team['league_team_index'] . ',' . $entry_id . ',NOW(),NOW(),0)';
                 }
