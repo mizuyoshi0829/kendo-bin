@@ -222,6 +222,7 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
         	            $rs = $dbs->query( $sql );
                 	    if( $rs === false ){ exit; }
                         $row = $rs->fetch_assoc();
+                        print_r($row);
                         $entry_id = $row['id'];
                     }
                     $sqlval[] = '(' . $league_id . ',' . $team['league_team_index'] . ',' . $entry_id . ',NOW(),NOW(),0)';
