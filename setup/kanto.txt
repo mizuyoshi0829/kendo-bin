@@ -1,0 +1,32 @@
+管理画面
+https://www.i-kendo.net/kendo/admin/login.php
+Vwea9mZwma
+
+入力ページ
+https://www.i-kendo.net/kendo/result/kanto/input.php
+
+第1試合場　190501
+第2試合場　244322
+第3試合場　309623
+第4試合場　410144
+第5試合場　593625
+第6試合場　615026
+第7試合場　782277
+第8試合場　873068
+
+リザルト
+https://i-kendo.info/kanto/2025/
+
+リアルタイム
+公開用(リロード版)
+https://www.i-kendo.info/kanto/realtime/realtime.php
+
+https://www.i-kendo.info/kanto/realtime/realtime1.php
+https://www.i-kendo.info/kanto/realtime/realtime2.php
+https://www.i-kendo.info/kanto/realtime/realtime3.php
+https://www.i-kendo.info/kanto/realtime/realtime4.php
+https://www.i-kendo.info/kanto/realtime/realtime5.php
+https://www.i-kendo.info/kanto/realtime/realtime6.php
+https://www.i-kendo.info/kanto/realtime/realtime7.php
+https://www.i-kendo.info/kanto/realtime/realtime8.php
+

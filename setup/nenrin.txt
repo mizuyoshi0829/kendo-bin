@@ -1,0 +1,41 @@
+
+管理画面
+https://localhost/admin/login.php
+SZxlerQwqe
+
+入力ページ
+http://localhost/result/nenrin/input.php
+
+第1試合場　189131
+第2試合場　214032
+第3試合場　369693
+第4試合場　429304
+
+リザルト
+https://www.i-kendo.info/nenrin/2025/
+http://localhost/result/2025/
+
+リアルタイム
+スコアーボード用
+http://localhost/realtime/realtime_4.html
+http://localhost/realtime/realtime1.html
+http://localhost/realtime/realtime2.html
+http://localhost/realtime/realtime3.html
+http://localhost/realtime/realtime4.html
+
+公開用
+https://www.i-kendo.info/nenrin/realtime/realtime.html
+
+https://www.i-kendo.info/nenrin/realtime/realtime1.html
+https://www.i-kendo.info/nenrin/realtime/realtime2.html
+https://www.i-kendo.info/nenrin/realtime/realtime3.html
+https://www.i-kendo.info/nenrin/realtime/realtime4.html
+
+公開用(リロード版)
+https://www.i-kendo.info/nenrin/realtime/realtime.php
+
+https://www.i-kendo.info/nenrin/realtime/realtime1.php
+https://www.i-kendo.info/nenrin/realtime/realtime2.php
+https://www.i-kendo.info/nenrin/realtime/realtime3.php
+https://www.i-kendo.info/nenrin/realtime/realtime4.php
+

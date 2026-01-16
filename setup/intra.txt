@@ -1,0 +1,16 @@
+Mac起動時に配信サーバを起動する必要があるので
+コンソールで
+/var/www/cgi-bin/kendo-realtime/src/start_server.sh
+を実行して下さい。
+起動時に自動的に実行できるように設定していたのですが、うまくいかなかったので
+申し訳ありませんが今回は手動で実行して下さい。
+
+マシンのIPが決まったら、以下の2ファイルを書き換えて下さい。
+
+/var/www/html/realtime/config.js
+1行目の
+let base_ip = '192.168.1.18';
+
+/var/www/html/admin/common/config.php
+3行目の
+define( '__ROOT_IP__', '192.168.1.18');
