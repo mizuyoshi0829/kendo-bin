@@ -104,7 +104,7 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
         {
             $sql = 'INSERT INTO `entry_info` (`series`, `year`, `disp_order`, `create_date`, `update_date`, `del`)'
                 . ' VALUES ('
-                . $entry['series'] . ',' . $year . ',' . $entry['disp_order'] . ',NOW(),NOW(),0)';
+                . $entry['series'] . ',' . $year . ',' . $entry['disp_order'] . ',NOW(),NOW(),' . $entry['id'] . ')';
             echo $sql."\n";
             $dbs->query( $sql );
             $id = $dbs->insert_id;
