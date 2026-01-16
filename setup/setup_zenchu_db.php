@@ -502,3 +502,7 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
     if( isset($ret['navi_input_info']) ){
         insert_table_data( $dbs, 'navi_input_info', $ret['navi_input_info'], false );
     }
+
+    if( isset($ret['navi_series']) ){
+        insert_table_data( $dbs, 'navi_series', $ret['navi_series'], false );
+    }
