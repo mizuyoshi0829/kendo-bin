@@ -492,6 +492,9 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
         $s = json_decode(json_encode($ret['series']), true);
         $s['result_path'] = dirname(dirname(dirname(__FILE__))) . '/html/' . $s['result_path_prefix'];
         $s['output_path'] = dirname(dirname(dirname(__FILE__))) . '/html/admin/output';
+        if( !file_exists( $s['result_path'] ) ){
+            mkdir( $s['result_path'], 0777, true );
+        }
         $data = [ $s ];
         insert_table_data( $dbs, 'series', $data, true );
     }
