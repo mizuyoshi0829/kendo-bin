@@ -10,7 +10,7 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
 */
     define( '__DATABASE_NAME__', 'keioffice_kendo' );
 
-    function insert_table_data( $dbs, $table_name, $data )
+    function insert_table_data( $dbs, $table_name, $data, $include_id )
     {
         $dbs->query('TRUNCATE TABLE `'.$table_name.'`');
         $sql = 'SELECT COLUMN_NAME, DATA_TYPE, IS_NULLABLE, COLUMN_DEFAULT, COLUMN_KEY, EXTRA'
@@ -24,7 +24,9 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
         for(;;){
             $row = $rs->fetch_assoc();
             if( $row === false || $row === null ){ break; }
-            if( $row['COLUMN_NAME'] == 'id' ){ continue; }
+            if( !$include_id && $row['COLUMN_NAME'] == 'id' ){
+                continue;
+            }
             $schema[] = $row;
         }
         foreach( $data as $lv ){
@@ -488,9 +490,9 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
 
     if( isset($ret['series']) ){
         $data = [ $ret['series'] ];
-        insert_table_data( $dbs, 'series', $data );
+        insert_table_data( $dbs, 'series', $data, true );
     }
 
     if( isset($ret['navi_input_info']) ){
-        insert_table_data( $dbs, 'navi_input_info', $ret['navi_input_info'] );
+        insert_table_data( $dbs, 'navi_input_info', $ret['navi_input_info'], false );
     }
