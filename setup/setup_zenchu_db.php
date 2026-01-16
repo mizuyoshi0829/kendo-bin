@@ -489,7 +489,10 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
     }
 
     if( isset($ret['series']) ){
-        $data = [ $ret['series'] ];
+        $s = json_decode(json_encode($ret['series']), true);
+        $s['result_path'] = dirname(dirname(dirname(__FILE__))) . '/html/' . $s['result_path_prefix'];
+        $s['output_path'] = dirname(dirname(dirname(__FILE__))) . '/html/admin/output';
+        $data = [ $s ];
         insert_table_data( $dbs, 'series', $data, true );
     }
 
