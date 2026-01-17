@@ -1,0 +1,41 @@
+管理画面
+https://i-kendo.net/kendo/admin/login.php
+http://192.168.1.126/admin/login.php
+小学生
+eFPFkcfYWo
+中学生
+qJ75FSNgyH
+
+入力ページ
+https://www.i-kendo.net/kendo/result/hs/input.php
+http://192.168.1.126/result/input.php
+第1試合場　197791
+第2試合場　275192
+第3試合場　394793
+第4試合場　471194
+第5試合場　598795
+第6試合場　673196
+第7試合場　795397
+第8試合場　871258
+第9試合場　983659
+第10試合場　107501
+
+リザルト
+https://i-kendo.info/kiyonosyubukan/60th/
+http://192.168.1.126/result/60th/
+
+リアルタイム
+一覧
+http://192.168.1.126/realtime/realtime_10.html
+
+スコアーボード用
+http://192.168.1.126/realtime/realtime1.html
+http://192.168.1.126/realtime/realtime2.html
+http://192.168.1.126/realtime/realtime3.html
+http://192.168.1.126/realtime/realtime4.html
+http://192.168.1.126/realtime/realtime5.html
+http://192.168.1.126/realtime/realtime6.html
+http://192.168.1.126/realtime/realtime7.html
+http://192.168.1.126/realtime/realtime8.html
+http://192.168.1.126/realtime/realtime9.html
+http://192.168.1.126/realtime/realtime10.html
