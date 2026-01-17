@@ -1,0 +1,41 @@
+
+管理画面
+http://192.168.1.126/admin/login.php
+aGan9ZQs67
+
+入力ページ
+http://192.168.1.126/result/zenchu/input.php
+
+第1試合場　145288
+第2試合場　229622
+第3試合場　316733
+第4試合場　447194
+第5試合場　594365
+第6試合場　641286
+第7試合場　784877
+第8試合場　856488
+審判　2026
+
+リザルト
+https://zenchu.i-kendo.info/result/2026pre/
+http://192.168.1.126/result/2026pre/
+
+リアルタイム
+スコアーボード用
+http://192.168.1.126/realtime/realtime_6.html
+http://192.168.1.126/realtime/realtime1.html
+http://192.168.1.126/realtime/realtime2.html
+http://192.168.1.126/realtime/realtime3.html
+http://192.168.1.126/realtime/realtime4.html
+http://192.168.1.126/realtime/realtime5.html
+http://192.168.1.126/realtime/realtime6.html
+
+公開用(リロード版)
+https://www.i-kendo.info/zenchu/realtime/realtime.php
+
+https://www.i-kendo.info/zenchu/realtime/realtime1.php
+https://www.i-kendo.info/zenchu/realtime/realtime2.php
+https://www.i-kendo.info/zenchu/realtime/realtime3.php
+https://www.i-kendo.info/zenchu/realtime/realtime4.php
+https://www.i-kendo.info/zenchu/realtime/realtime5.php
+https://www.i-kendo.info/zenchu/realtime/realtime6.php
