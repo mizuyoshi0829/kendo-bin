@@ -46,7 +46,7 @@
                 $data = [
                     'mode' => $lv['mode'],
                     'navi' => $lv['navi'],
-                    'file' => '',
+                    //'file' => '',
                     'place' => $lv['place'],
                     'file' => sprintf( '/realtime/%04d_%02d', $lv['navi'], $lv['place'] ),
                     'series' => $lv['series'],
@@ -58,6 +58,23 @@
                 $socket2 = $context->getSocket(ZMQ::SOCKET_PUSH, 'my pusher2');
                 $socket2->connect("tcp://localhost:5556");
                 $socket2->send(json_encode($data));
+
+                $data['value'] = file_get_contents( $lv['file'] );
+                $data = http_build_query( $data, "", "&" );
+                $header = array(
+                    "Content-Type: application/x-www-form-urlencoded",
+                    "Content-Length: ".strlen($data)
+                );
+                $options = [
+                    'http' => [
+                        'method' => 'POST',
+                        'header' => implode("\r\n", $header),
+                        'content' => $data,
+                    ]
+                ];
+                $options = stream_context_create( $options );
+                $contents = file_get_contents( $url, false, $options );
+
             } else if( $lv['mode'] == 2 ){
                 $data = [
                     'mode' => $lv['mode'],
