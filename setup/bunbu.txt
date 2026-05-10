@@ -1,0 +1,36 @@
+
+管理画面
+http://192.168.1.126/admin/login.php
+Gx8DWWqidk
+
+入力ページ
+http://192.168.1.126/result/input.php
+
+第1試合場　176171
+第2試合場　261402
+第3試合場　397793
+第4試合場　471194
+第5試合場　543765
+第6試合場　617366
+第7試合場　705967
+第8試合場　883108
+第9試合場　921359
+第10試合場　106510
+第11試合場　117311
+第12試合場　124512
+第13試合場　135813
+第14試合場　148314
+
+リザルト
+https://i-kendo.info/bunbu/2026/
+http://192.168.1.126/result/2026/
+
+リアルタイム
+スコアーボード用
+http://192.168.1.126/realtime/realtime_6.html
+http://192.168.1.126/realtime/realtime1.html
+http://192.168.1.126/realtime/realtime2.html
+http://192.168.1.126/realtime/realtime3.html
+http://192.168.1.126/realtime/realtime4.html
+http://192.168.1.126/realtime/realtime5.html
+http://192.168.1.126/realtime/realtime6.html
