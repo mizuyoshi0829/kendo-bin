@@ -1,6 +1,6 @@
 <?php
-    require_once '/var/www/kendo-server/admin/common/common.php';
-    require_once '/var/www/kendo-server/admin/common/config.php';
+    require_once '/var/www/html/admin/common/common.php';
+    require_once '/var/www/html/admin/common/config.php';
 
     /**
      * ライン出力
@@ -16,13 +16,13 @@
             $y = sprintf( '%04d', intval( date( 'Y', $now ) ) );
             $m = sprintf( '%02d', intval( date( 'm', $now ) ) );
             $d = sprintf( '%02d', intval( date( 'd', $now ) ) );
-            if( !is_dir( '/var/www/kendo-bin/kendo-realtime/log/'.$y ) ){
-                mkdir( '/var/www/kendo-bin/kendo-realtime/log/'.$y );
+            if( !is_dir( '/var/www/cgi-bin/kendo-realtime/log/'.$y ) ){
+                mkdir( '/var/www/cgi-bin/kendo-realtime/log/'.$y );
             }
-            if( !is_dir( '/var/www/kendo-bin/kendo-realtime/log/'.$y.'/'.$y.$m ) ){
-                mkdir( '/var/www/kendo-bin/kendo-realtime/log/'.$y.'/'.$y.$m );
+            if( !is_dir( '/var/www/cgi-bin/kendo-realtime/log/'.$y.'/'.$y.$m ) ){
+                mkdir( '/var/www/cgi-bin/kendo-realtime/log/'.$y.'/'.$y.$m );
             }
-            $fp = fopen( '/var/www/kendo-bin/kendo-realtime/log/'.$y.'/'.$y.$m.'/queue_'.$y.$m.$d.'.log', 'a' );
+            $fp = fopen( '/var/www/cgi-bin/kendo-realtime/log/'.$y.'/'.$y.$m.'/queue_'.$y.$m.$d.'.log', 'a' );
             fwrite( $fp, '['.date('Y/m/d H:i:s', $now).'] '.$msg."\n" );
             fclose( $fp );
         }
