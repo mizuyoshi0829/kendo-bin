@@ -116,6 +116,8 @@
             echo $sql."\n";
         }
     }
+    exit(0);
+/*
     if( isset($ret['entry_field_def']) && count($ret['entry_field_def']) > 0 ){
         $dbs->query('TRUNCATE TABLE `entry_field_def`');
         $values = [];
@@ -150,8 +152,7 @@
         echo $sql."\n";
         $dbs->query($sql);
     }
-    exit();
-/*
+
     $dbs->query('TRUNCATE TABLE `dantai_match`');
     $dbs->query('TRUNCATE TABLE `one_match`');
     if( isset($ret['dantai_league']) && count($ret['dantai_league']) > 0 ){
