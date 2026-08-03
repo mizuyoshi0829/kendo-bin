@@ -1,0 +1,51 @@
+コンソールで
+/var/www/kendo-bin/kendo-realtime/src/start_server.sh
+を実行。
+
+マシンのIPが決まったら、以下の2ファイルを書き換える。。
+
+/var/www/kendo-server/realtime/config.js
+1行目の
+let base_ip = '192.168.1.126';
+
+/var/www/kendo-server/admin/common/config.php
+3行目の
+define( '__ROOT_IP__', '192.168.1.126');
+
+
+管理画面
+https://i-kendo.net/kendo/admin/login.php
+http://192.168.1.126/admin/login.php
+
+h9B2vDb1z4
+
+入力ページ
+http://192.168.1.126/result/input.php
+第1試合場　196731
+第2試合場　235462
+第3試合場　318243
+第4試合場　428794
+第5試合場　528715
+第6試合場　683496
+第7試合場　729187
+第8試合場　863918
+
+
+リザルト
+https://i-kendo.info/kiyonosyubukan/2026/
+http://192.168.1.126/result/2026/
+
+リアルタイム
+一覧
+http://192.168.1.126/realtime/realtime_8.html
+
+スコアーボード用
+http://192.168.1.126/realtime/realtime1.html
+http://192.168.1.126/realtime/realtime2.html
+http://192.168.1.126/realtime/realtime3.html
+http://192.168.1.126/realtime/realtime4.html
+http://192.168.1.126/realtime/realtime5.html
+http://192.168.1.126/realtime/realtime6.html
+http://192.168.1.126/realtime/realtime7.html
+http://192.168.1.126/realtime/realtime8.html
+

@@ -116,8 +116,8 @@
             echo $sql."\n";
         }
     }
-    exit(0);
-/*
+//    exit(0);
+/**/
     if( isset($ret['entry_field_def']) && count($ret['entry_field_def']) > 0 ){
         $dbs->query('TRUNCATE TABLE `entry_field_def`');
         $values = [];
@@ -367,10 +367,13 @@
                     echo $sql."\n";
                     $dbs->query( $sql );
                     $match_id = $dbs->insert_id;
-                    $sqlval[] = '(' . $tournament_id . ',' . $match['tournament_match_index'] . ',' . $match_id . ',NOW(),NOW(),0)';
+                    $sqlval[] = '(' . $tournament_id . ','
+                        . $match['tournament_match_index'] . ','
+                        . $match['no_match'] . ','
+                        . $match_id . ',NOW(),NOW(),0)';
                 }
                 $sql = 'INSERT INTO `dantai_tournament_match` ('
-                    . '`tournament`,`tournament_match_index`,`match`,`create_date`,`update_date`,`del`'
+                    . '`tournament`,`tournament_match_index`,`no_match`,`match`,`create_date`,`update_date`,`del`'
                     . ') VALUES ' . implode(',',$sqlval);
                 echo $sql."\n";
                 $dbs->query( $sql );
@@ -483,8 +486,8 @@
 
     if( isset($ret['series']) ){
         $s = json_decode(json_encode($ret['series']), true);
-        $s['result_path'] = dirname(dirname(dirname(__FILE__))) . '/html/' . $s['result_path_prefix'];
-        $s['output_path'] = dirname(dirname(dirname(__FILE__))) . '/html/admin/output';
+        $s['result_path'] = dirname(dirname(dirname(__FILE__))) . '/kendo-server/result/' . $s['result_path_prefix'];
+        $s['output_path'] = dirname(dirname(dirname(__FILE__))) . '/kendo-server/admin/output';
         if( !file_exists( $s['result_path'] ) ){
             mkdir( $s['result_path'], 0777, true );
         }
@@ -499,4 +502,4 @@
     if( isset($ret['navi_series']) ){
         insert_table_data( $dbs, 'navi_series', $ret['navi_series'], false );
     }
-*/
+/**/

@@ -49,12 +49,12 @@ class Realtime implements MessageComponentInterface {
                     $p = intval($place);
                     if( $p == 0 ){ continue; }
                     $client_data['places'][] = $p;
-                    $file = sprintf( '/var/www/html/result/realtime/%04d_%02d.html', $client_data['navi'], $p );
+                    $file = sprintf( '/var/www/kendo-server/result/realtime/%04d_%02d.html', $client_data['navi'], $p );
                 } else {
                     $p = htmlentities($place);
                     if( $p == '' ){ continue; }
                     $client_data['places'][] = $p;
-                    $file = sprintf( '/var/www/html/result/realtime/%04d_%s.html', $client_data['navi'], $p );
+                    $file = sprintf( '/var/www/kendo-server/result/realtime/%04d_%s.html', $client_data['navi'], $p );
                 }
                 if( $file == '' ){ continue; }
                 if( !file_exists($file) ){ continue; }
@@ -97,11 +97,11 @@ class Realtime implements MessageComponentInterface {
         if( $data['mode'] == 1 ){
             $data['place'] = isset($commandData['place']) ? intval($commandData['place']) : 0;
             if( $data['place'] == 0 ){ return; }
-            $file = sprintf( '/var/www/html/result/realtime/%04d_%02d.html', $data['navi'], $data['place'] );
+            $file = sprintf( '/var/www/kendo-server/result/realtime/%04d_%02d.html', $data['navi'], $data['place'] );
         } else {
             $data['place'] = isset($commandData['place']) ? htmlentities($commandData['place']) : '';
             if( $data['place'] == '' ){ return; }
-            $file = sprintf( '/var/www/html/result/realtime/%04d_%s.html', $data['navi'], $data['place'] );
+            $file = sprintf( '/var/www/kendo-server/result/realtime/%04d_%s.html', $data['navi'], $data['place'] );
         }
         if( !file_exists($file) ){ return; }
         $data['html'] = file_get_contents( $file );
