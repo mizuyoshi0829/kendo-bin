@@ -1,25 +1,19 @@
 <?php
-/*
-INSERT INTO `dantai_tournament` (`series`, `year`, `series_mw`, `no`, `advanced`, `sub_league`, `team_num`, `tournament_team_num`, `match_num`, `extra_match_num`, `extra_name`, `match_level`, `place_num`, `navi_index`, `match_offset`, `display_offset`, `display_place_offset`, `create_date`, `update_date`, `del`) VALUES
-(70, 2025, 'm', 1, 0, 1, 64, 64, 63, 0, '', 6, 8, 13, 0, 0, 0, NOW(), NOW(), 0);
-
-INSERT INTO `kojin_tournament` (`series`, `year`, `series_mw`, `no`, `player_num`, `tournament_player_num`, `match_num`, `extra_match_num`, `match_level`, `place_num`, `tournament_name`, `extra_name`, `relative`, `relative_start`, `relative_num`, `match_offset`, `display_offset`, `display_place_offset`, `create_date`, `update_date`, `del`) VALUES
-(73, 2025, 'w', 1, 64, 64, 63, 0, 6, 8, '個人戦女子', '', 0, 0, 0, 0, 0, 0, NOW(), NOW(), 0),
-(72, 2025, 'm', 1, 64, 64, 63, 0, 6, 8, '個人戦男子', '', 0, 0, 0, 0, 0, 0, NOW(), NOW(), 0);
-define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
-*/
-    define( '__DATABASE_NAME__', 'keioffice_kendo' );
+    require_once '/var/www/kendo-server/admin/common/config.php';
+    define( '__TRUNCATE_DB__', true );
 
     function insert_table_data( $dbs, $table_name, $data, $include_id )
     {
-        $dbs->query('TRUNCATE TABLE `'.$table_name.'`');
+        if( __TRUNCATE_DB__ ){
+            $dbs->query('TRUNCATE TABLE `'.$table_name.'`');
+        }
         $sql = 'SELECT COLUMN_NAME, DATA_TYPE, IS_NULLABLE, COLUMN_DEFAULT, COLUMN_KEY, EXTRA'
             . ' FROM information_schema.COLUMNS'
-            . ' WHERE TABLE_SCHEMA = \'' . __DATABASE_NAME__ . '\''
+            . ' WHERE TABLE_SCHEMA = \'' . DATABASE_NAME . '\''
             . ' AND TABLE_NAME = \'' . $table_name . '\'';
         //echo $sql."\n";
         $rs = $dbs->query( $sql );
-    	if( $rs === false ){ return; }
+    	 if( $rs === false ){ return; }
         $schema = [];
         for(;;){
             $row = $rs->fetch_assoc();
@@ -84,11 +78,11 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
 //    if( !$ret['result'] ){ exit(); }
 
     $dump_file = 'kendo.' . date('YmdHis') . '.sql';
-    $dump = 'mysqldump --single-transaction -h localhost -u keioffice_kendo -phprzjntc keioffice_kendo >' . $dump_file;
+    $dump = 'mysqldump --single-transaction -h localhost -u ' . DATABASE_USER . ' -p' . DATABASE_PASSWORD . ' ' . DATABASE_NAME . ' >' . $dump_file;
     echo $dump;
     exec($dump);
 
-    $dbs = new mysqli( 'localhost', 'keioffice_kendo', 'hprzjntc', __DATABASE_NAME__ );
+    $dbs = new mysqli( 'localhost', DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME );
     if( $dbs === false ){
         //接続失敗
         echo 'データベース接続に失敗しました。(1)';
@@ -490,8 +484,8 @@ define( 'ROOT_PASSWORD', 'tNson5C4LT8t' );
 
     if( isset($ret['series']) ){
         $s = json_decode(json_encode($ret['series']), true);
-        $s['result_path'] = dirname(dirname(dirname(__FILE__))) . '/html/' . $s['result_path_prefix'];
-        $s['output_path'] = dirname(dirname(dirname(__FILE__))) . '/html/admin/output';
+        $s['result_path'] = dirname(dirname(dirname(__FILE__))) . '/kendo-server/' . $s['result_path_prefix'];
+        $s['output_path'] = dirname(dirname(dirname(__FILE__))) . '/kendo-server/admin/output';
         if( !file_exists( $s['result_path'] ) ){
             mkdir( $s['result_path'], 0777, true );
         }
