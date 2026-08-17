@@ -17,8 +17,8 @@ http://192.168.1.126/result/zenchu/input.php
 審判　2026
 
 リザルト
-https://zenchu.i-kendo.info/result/2026pre/
-http://192.168.1.126/result/2026pre/
+https://zenchu.i-kendo.info/result/2026/
+http://192.168.1.126/result/2026/
 
 リアルタイム
 スコアーボード用

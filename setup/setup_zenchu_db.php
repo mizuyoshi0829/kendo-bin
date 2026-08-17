@@ -413,9 +413,9 @@
                 . $tournament['year'] . ','
                 . '\'' . $tournament['series_mw'] . '\','
                 . $tournament['no'] . ','
-                . $tournament['player_num'] . ','
                 . $tournament['tournament_player_num'] . ','
-                . $tournament['match_num'] . ','
+                . $tournament['tournament_player_num'] . ','
+                . ($tournament['tournament_player_num']-1) . ','
                 . $tournament['extra_match_num'] . ','
                 . $tournament['match_level'] . ','
                 . $tournament['place_num'] . ','
@@ -489,6 +489,7 @@
         if( !file_exists( $s['result_path'] ) ){
             mkdir( $s['result_path'], 0777, true );
         }
+        $s['result_path_prefix'] = 'zenchu/result/2026';
         $data = [ $s ];
         insert_table_data( $dbs, 'series', $data, true );
     }
