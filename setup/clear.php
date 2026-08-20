@@ -2,6 +2,7 @@
     require_once dirname(dirname(dirname(__FILE__))).'/kendo-server/admin/common/common.php';
     require_once dirname(dirname(dirname(__FILE__))).'/kendo-server/admin/common/config.php';
 
+	$dbs = db_connect( DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME );
     $sql = 'select `dantai_match`.*,'
         . '`dantai_league_match`.`league` as `league`,'
         . '`dantai_league_match`.`league_match_index` as `league_match_index`,'
