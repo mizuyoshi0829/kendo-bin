@@ -17,7 +17,7 @@
             if( $lv['league_match_index'] <= 3 ){
     			$sql = 'update `one_match`'
 	    			. ' set `player1`=' . $match . ',`player2`=' . $match
-    				. ' where `id`=' . $lv['match'.$match];
+    				. ' where `id`=' . $lv['match'.$match] . ';';
                 echo $sql . "\n";
             }
         }
