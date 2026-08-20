@@ -1,4 +1,5 @@
 /setup/*.sql
 /setup/*.dump
+/setup/backup/
 /kendo_realtime/src/pdf_queue_lock
 /kendo-realtime/log/
