@@ -3,6 +3,8 @@
     require_once dirname(dirname(dirname(__FILE__))).'/kendo-server/admin/common/config.php';
 
 	$dbs = db_connect( DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME );
+    for( $series = 7; $series <= 8; $series++ ){
+
     $sql = 'select `dantai_match`.*,'
         . '`dantai_league_match`.`league` as `league`,'
         . '`dantai_league_match`.`league_match_index` as `league_match_index`,'
@@ -10,7 +12,7 @@
         . ' from `dantai_match`'
         . ' inner join `dantai_league_match` on `dantai_league_match`.`match`=`dantai_match`.`id`'
         . ' inner join `dantai_league` on `dantai_league_match`.`league`=`dantai_league`.`id`'
-        . ' where `dantai_league`.`series`=7 and `dantai_league`.`year`=2026 and `dantai_league`.`del`=0 order by `dantai_match`.`id` asc';
+        . ' where `dantai_league`.`series`=' . $series . ' and `dantai_league`.`year`=2026 and `dantai_league`.`del`=0 order by `dantai_match`.`id` asc';
     $list = db_query_list( $dbs, $sql );
 	foreach( $list as $lv ){
         for( $match = 1; $match <= 5; $match++ ){
@@ -21,4 +23,6 @@
                 echo $sql . "\n";
             }
         }
+    }
+
     }
