@@ -23,6 +23,9 @@ sudo restorecon -v  "/var/www/kendo-server/admin/templates(/.*)?"
 sudo restorecon -v /var/www/kendo-server/admin/templates/templates/
 sudo restorecon -v /var/www/kendo-server/admin/templates/templates_c/
 sudo restorecon -v /var/www/kendo-server/admin/templates/excel
+sudo semanage fcontext -a -t httpd_sys_rw_content_t /var/www/kendo-server/admin/common
+sudo restorecon -v  /var/www/kendo-server/admin/common
+
 
 sudo semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/kendo-server/result(/.*)?"
 sudo restorecon -v /var/www/kendo-server/result
